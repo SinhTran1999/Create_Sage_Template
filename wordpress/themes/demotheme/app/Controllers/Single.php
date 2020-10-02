@@ -15,4 +15,6 @@ class Single extends Controller
     {
         return get_field('images');
     }
+
+    use Partials\Images;
 }
