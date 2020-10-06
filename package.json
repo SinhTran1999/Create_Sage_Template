@@ -1,0 +1,23 @@
+{
+  "name": "Create_Sage_Template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SinhTran1999/Create_Sage_Template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SinhTran1999/Create_Sage_Template/issues"
+  },
+  "homepage": "https://github.com/SinhTran1999/Create_Sage_Template#readme",
+  "devDependencies": {
+    "laravel-mix": "^6.0.0-beta.4"
+  }
+}
