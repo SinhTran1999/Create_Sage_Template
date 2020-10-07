@@ -13,7 +13,7 @@ use Roots\Sage\Template\BladeProvider;
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
     wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
-
+    wp_enqueue_script('fontawesome.js', "https://kit.fontawesome.com/7312f418af.js", [], null, true);
     if (is_single() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }
@@ -76,20 +76,20 @@ add_action('after_setup_theme', function () {
  * Register sidebars
  */
 add_action('widgets_init', function () {
-    // $config = [
-    //     'before_widget' => '<section class="widget %1$s %2$s">',
-    //     'after_widget'  => '</section>',
-    //     'before_title'  => '<h3>',
-    //     'after_title'   => '</h3>'
-    // ];
-    // register_sidebar([
-    //     'name'          => __('Primary', 'sage'),
-    //     'id'            => 'sidebar-primary'
-    // ] + $config);
-    // register_sidebar([
-    //     'name'          => __('Footer', 'sage'),
-    //     'id'            => 'sidebar-footer'
-    // ] + $config);
+    $config = [
+        'before_widget' => '<section class="widget %1$s %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h3>',
+        'after_title'   => '</h3>'
+    ];
+    register_sidebar([
+        'name'          => __('Primary', 'sage'),
+        'id'            => 'sidebar-primary'
+    ] + $config);
+    register_sidebar([
+        'name'          => __('Footer', 'sage'),
+        'id'            => 'sidebar-footer'
+    ] + $config);
 });
 
 /**

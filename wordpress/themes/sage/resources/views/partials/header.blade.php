@@ -1,10 +1,11 @@
-<header class="banner">
-  <div class="container">
-    <a class="brand" href="{{ home_url('/') }}">{{ get_bloginfo('name', 'display') }}</a>
-    <nav class="nav-primary">
-      @if (has_nav_menu('primary_navigation'))
-        {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']) !!}
-      @endif
-    </nav>
+<header id="header">
+  <div class=" d-flex justify-content-between px-4 py-1 bg-warning">
+      <p class="text-black-50 m-0">Tran Nhan Sinh - 59-CNTT1 -Phú Hòa- Phú Yên</p>
+      <div class=" font-size-14">
+          <a href="#" class="px-3 border-right border-left text-dark">Login</a>
+          <a href="#" class="px-3 border-right text-dark">Whishlist (0 )</a>
+      </div>
   </div>
+  <!-- end Primary Navigation -->
 </header>
+<!-- end #header -->
