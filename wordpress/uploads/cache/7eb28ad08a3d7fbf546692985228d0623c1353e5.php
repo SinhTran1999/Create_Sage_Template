@@ -6,6 +6,7 @@
           <a href="#" class="px-3 border-right text-dark">Whishlist (0 )</a>
       </div>
   </div>
+  
   <!-- end Primary Navigation -->
 </header>
 <!-- end #header -->

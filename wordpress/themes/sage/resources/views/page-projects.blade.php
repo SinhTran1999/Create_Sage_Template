@@ -1,12 +1,14 @@
 @extends('layouts.app')
 @section('content')
       <div class="container">
+        @include('partials.slider')
         <h1 class="text-center text-danger mb-4">Danh sách các hình ảnh</h1>
+
         <div class="d-flex justify-content-between">
         @foreach ($projects as $project)
-            <div class="col-md-4">
+            <div class="col-md-4 px-3">
               <img src= "{{$project->thumb}}" alt="{{$project->alt}}"  title="{{$project->title}}" class="image-fluid">
-              <p class="text-center">{{$project->name}}</p>
+              <p class="text-center text-uppercase">{{$project->name}}</p>
             </div>
 
             @if ($loop->iteration %3 === 0)

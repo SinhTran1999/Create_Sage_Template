@@ -43,7 +43,8 @@ class PageProjects extends Controller
               'thumb' => $thumb,
               'width' => $width,
               'height' => $height,
-              'name'  => $name
+              'name'  => $name,
+              'permalink' => get_post_permalink($project)
           ];
         }, $the_query->posts);
         wp_reset_postdata();
