@@ -16,12 +16,14 @@
           'post_type' =>'projects'
         ];
 
-        $the_query = new \WP_Query($args)
+        $the_query = new \WP_Query($args);
+        $count = 0;
       ?>
 
-      <div class="flex">
+      <div class="flex my-10">
         <?php while($the_query->have_posts()): ?> <?php $the_query->the_post() ?>
           <?php
+          $count++;
           $image = get_field('project_image'); 
           //  vars
           $url = $image['url'];
@@ -29,18 +31,25 @@
           $alt = $image['alt'];
           $caption = $image['caption'];
 
-          // thumbnail, medium, large 
-          $size = ['medium'];
+          //thumbnail, medium, large 
+          $size = 'medium';
           $thumb = $image['sizes'][$size];
           $width = $image['sizes'][$size. '-width'];
           $height = $image['sizes'][$size.'-height'];
+          
+          $name = get_field('name');
 
           ?>
 
-          <div class="w-1/3">
-          <img src= "<?php echo e($thumb); ?>" alt="<?php echo e($alt); ?>" title="<?php echo e($title); ?>">
+          <div class="w-1/3 relative">
+            <img src= "<?php echo e($thumb); ?>" alt="<?php echo e($alt); ?>"  title="<?php echo e($title); ?>">
+          <p class="absolute bottom-5  left-0 bg-white w-full"><?php echo e($name); ?></p>
           </div>
-
+          <?php if($count %3 ===0): ?>
+      </div>
+      <div class="flex mb-10">
+              
+          <?php endif; ?>
         <?php endwhile; ?>
       </div>
 
