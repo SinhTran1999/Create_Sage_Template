@@ -3,20 +3,21 @@
 namespace App\Controllers;
 
 use Sober\Controller\Controller;
+use WP_Query;
 
 class PageProjects extends Controller
 {
   public function projects(){
     
     $args = [
-      'post_per_page' => -1,
+      'posts_per_page' => -1,
       'offset' => 0,
       'orderby' => 'date',
       'order' => 'DESC',
       'post_type' =>'projects'
     ];
     
-    $the_query = new \WP_Query($args);
+    $the_query = new WP_Query($args);
     $projects = [];
 
     if($the_query->post_count > 0){
@@ -50,5 +51,26 @@ class PageProjects extends Controller
         wp_reset_postdata();
     }
     return $projects;
+  }
+
+  public function sliders() {
+    return [
+      [
+        'link' => '#',
+        'image' => get_template_directory_uri(  ) . '/assets/images/slide1.jpg'
+      ],
+      [
+        'link' => '#',
+        'image' => get_template_directory_uri(  ) . '/assets/images/slide2.png'
+      ],
+      [
+        'link' => '#',
+        'image' => get_template_directory_uri(  ) . '/assets/images/slide3.jpg'
+      ],
+      [
+        'link' => '#',
+        'image' => get_template_directory_uri(  ) . '/assets/images/slide4.png'
+      ]
+    ];
   }
 }
